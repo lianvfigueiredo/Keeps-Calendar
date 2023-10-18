@@ -29,7 +29,10 @@
                                 <a class="addReminder" [routerLink]="['/reminder/', item.id]">+</a>
                             </div>
                             <div *ngFor="let reminder of reminders">
-                                {{ reminder.day }}
+                                <div *ngIf="item.id == reminder.day">
+                                    {{ reminder.day }}
+                                </div>
+                                
                             </div>
                         </div>
                     </td>
