@@ -19,9 +19,11 @@
             </thead>
             <tbody>
 
-                <tr *ngFor="let semana of data">
-                    <td *ngFor="let item of semana.dias">
-                        <div *ngIf=" item.id != '' ">
+                <tr style="max-height: 40px; overflow: hidden; text-overflow: ellipsis;
+                white-space: nowrap;" *ngFor="let semana of data">
+                    <td style="max-height: 40px; overflow: hidden; text-overflow: ellipsis;
+                    white-space: nowrap;" *ngFor="let item of semana.dias">
+                        <div  *ngIf=" item.id != '' ">
 
                             <!-- Renderização do dia -->
                             <div style="display: flex; justify-content: space-between;">
