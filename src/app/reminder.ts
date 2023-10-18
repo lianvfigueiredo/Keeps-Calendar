@@ -1,15 +1,15 @@
 export class Reminder {
-    id: number;
-    date: Date;
-    reminder: string;
-    color: ReminderColor;
+    id: string | null;
+    date: Date | null = null;
+    reminder: string | null = null;
+    color: ReminderColor | null = null;
 
 
-    constructor(id: number, date: Date, reminder: string, color: ReminderColor) {
+    constructor(id: string | null, /*date: Date, reminder: string, color: ReminderColor*/) {
         this.id = id;
-        this.date = date;
-        this.reminder = reminder;
-        this.color = color;
+        // this.date = date;
+        // this.reminder = reminder;
+        // this.color = color;
     }
 }
 

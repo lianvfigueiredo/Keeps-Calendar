@@ -1,50 +1,44 @@
-
 <body>
     <div id="month">
-        <button id="take" (click)="take()" class="addMonth">Previous
+        <button id="take" (click)="take()" class="changeMonth">Previous
         </button>
-        <div id="test">
-            <table id="calendario">
-                <caption>{{ ano }}</caption>
-                <caption>{{ monthName[mes%12] }}</caption>
-                <thead>
-                    <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat
-                        <button><a [routerLink]="['/reminder']"> Play</a></button>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr *ngFor="let semana of data">
-                        <td *ngFor="let item of semana.dias">
-                            <div *ngIf=" item.id != '' ">
-                                <div style="display: flex; justify-content: space-between;">
-                                    {{ item.dayOfMonth }}
-                                    <a class="addReminder" [routerLink]="['/reminder']" >+</a>
-                                </div>
-                                <!-- <app-day [item]="item"></app-day> -->
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- <tr *ngFor="let semana of data">
-                        <td *ngFor="let item of semana.dias">
-                          {{ item }}
-                        </td>
-                    </tr> -->
-                </tbody>
-            </table>
-        </div>
 
-        <button id="add" (click)="add()" class="addMonth">Next</button>
+        <table id="calendario">
+            <caption>{{ ano }}</caption>
+            <caption>{{ monthName[mes%12] }}</caption>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let semana of data">
+                    <td *ngFor="let item of semana.dias">
+                        <div *ngIf=" item.id != '' ">
+
+                            <!-- Renderização do dia -->
+                            <div style="display: flex; justify-content: space-between;">
+                                {{ item.dayOfMonth }}
+                                <a class="addReminder" [routerLink]="['/reminder/', item.id]">+</a>
+                            </div>
+                        
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+        <button id="add" (click)="add()" class="changeMonth">Next</button>
 
     </div>
-    
-</body>
 
+</body>

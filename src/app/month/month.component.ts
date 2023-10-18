@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Day } from '../day';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-month',
@@ -10,20 +12,16 @@ export class MonthComponent {
 
   
   monthName = monthName;
-
   mes = new Date().getMonth();
   ano = new Date().getFullYear();
   arrDias = popular(this.mes, this.ano);
   data = this.arrDias;
-  // item = Day;
-  // id = this.data;
 
   add(){
     this.ano = new Date(this.ano, this.mes +1).getFullYear();
     this.mes = new Date(this.ano, this.mes +1).getMonth();
     const arrDias = popular(this.mes, this.ano);
     this.data = arrDias;
-    console.log("Working")
   }
 
   take(){
@@ -31,12 +29,8 @@ export class MonthComponent {
     this.mes = new Date(this.ano, this.mes -1).getMonth();
     const arrDias = popular(this.mes, this.ano);
     this.data = arrDias;
-    console.log("Working")
   }
 
-  // showId(){
-  //   console.log(this.id)
-  // }
 }
 
 const popular = (mes: number, ano: number) => {

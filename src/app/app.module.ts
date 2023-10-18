@@ -6,24 +6,30 @@ import { AppComponent } from './app.component';
 import { MonthComponent } from './month/month.component';
 import { RouterModule } from '@angular/router';
 import { ReminderComponent } from './reminder/reminder.component';
-import { DayComponent } from './day/day.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonthComponent,
-    ReminderComponent,
-    DayComponent
+    ReminderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: MonthComponent},
-      {path: 'reminder', component: ReminderComponent}
+      
     ])
   ],
-  providers: [],
+  providers: [
+      // provideRouter(appRoutes, withComponentInputBinding()), 
+  ],
   bootstrap: [AppComponent]
+
+  
 })
 export class AppModule { }
+
+// const appRoutes: Routes = [];
+// bootstrapApplication(AppComponent, {
+//   providers: [provideRouter(appRoutes)]
+// });

@@ -13,14 +13,15 @@ th, td{
     border: 1px solid black;
     width: 14.285%;
 }
-.addMonth{
-    margin: auto; 
+.changeMonth{
+    margin: auto 2%; 
         justify-content: space-between; 
         vertical-align: center;
         background-color: rgba(68, 68, 176, 0.727);
         color: white;
-        font-size: 13px;
-        width: 80px;
+        font-size: 20px;
+        font-weight: 700;
+        width: auto;
         text-align: center;
         padding: 7px;
         border-radius: 6px;
@@ -28,7 +29,7 @@ th, td{
         text-transform:uppercase;
 }
 
-.addMonth:hover{
+.changeMonth:hover{
     cursor:pointer;
 }
 .addReminder{
@@ -67,16 +68,11 @@ td{
 #month{
     margin: 20px auto ;
     height: 80%;
-    width: 80%;
+    width: 98%;
     display: flex;
     justify-content: center;
     
 
-}
-#test{
-    width: 80%;
-    height: 70%;
-    text-align: center;
 }
 #calendario{
     
