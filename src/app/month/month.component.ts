@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Day } from '../day';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../app.component';
+import { Reminder } from '../reminder';
 
 @Component({
   selector: 'app-month',
@@ -31,6 +30,9 @@ export class MonthComponent {
     this.data = arrDias;
   }
 
+
+  reminders = Reminder.reminders;
+  // console.log(reminders.day)
 }
 
 const popular = (mes: number, ano: number) => {
@@ -41,23 +43,23 @@ const popular = (mes: number, ano: number) => {
   
   // Deixa os espaços iniciais em branco
   for (dia; dia <= diaQueComeca; dia++) {
-    semana[0].dias.push(new Day("", 0));
+    semana[0].dias.push(new Day("", 0, null));
   }
   // Completa os restantes
   for (dia = 1; semana[0].dias.length < 7; dia++) {
-    semana[0].dias.push(new Day(`${dia}-${mes}-${ano}`, dia));
+    semana[0].dias.push(new Day(`${dia}-${mes}-${ano}`, dia, new Date(ano, mes, dia)));
   }
   // Popula o mês
   let j = 1
   for (j; j < 6 && dia <= diaQueTermina; j++) {
     semana.push({ dias: [] });
     for (dia; semana[j].dias.length < 7 && dia <= diaQueTermina; dia++) {
-      semana[j].dias.push(new Day(`${dia}-${mes}-${ano}`, dia));
+      semana[j].dias.push(new Day(`${dia}-${mes}-${ano}`, dia,  new Date(ano, mes, dia)));
     }
   }
   // Deixa os espaços restantes em branco
   for(; semana[j - 1].dias.length < 7; ){
-    semana[j - 1].dias.push(new Day("", 0));
+    semana[j - 1].dias.push(new Day("", 0, null));
   }
   return semana;
 

@@ -1,12 +1,15 @@
 export class Reminder {
-    id: string | null;
-    date: Date | null = null;
+    static reminders: Reminder[] = []
+    idByDate: Date | null;
+    day: string | null = null;
     reminder: string | null = null;
     color: ReminderColor | null = null;
 
 
-    constructor(id: string | null, /*date: Date, reminder: string, color: ReminderColor*/) {
-        this.id = id;
+    constructor(idByDate: Date | null, day: string | null, /*date: Date, reminder: string, color: ReminderColor*/) {
+        this.idByDate = idByDate;
+        this.day = day;
+        Reminder.reminders.push(this);
         // this.date = date;
         // this.reminder = reminder;
         // this.color = color;

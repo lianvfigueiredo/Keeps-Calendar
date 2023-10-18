@@ -1,2 +1,21 @@
-<p>My id is : {{ idOfDay }}</p>
+<style>
+    .addReminder{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    font-size: 20px;
+    font-weight:600;
+    background-color: rgba(214, 214, 214, 0.55);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.addReminder:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}
+</style><p>My id is : {{ idOfDay }}</p>
 <p>My teste is: {{ teste }}</p>
+<p>My teste is: {{ teste2 }}</p>
+<a class="addReminder" (click)="saveAndNavigateBack()">+</a>

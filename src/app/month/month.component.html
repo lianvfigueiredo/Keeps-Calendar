@@ -28,7 +28,9 @@
                                 {{ item.dayOfMonth }}
                                 <a class="addReminder" [routerLink]="['/reminder/', item.id]">+</a>
                             </div>
-                        
+                            <div *ngFor="let reminder of reminders">
+                                {{ reminder.day }}
+                            </div>
                         </div>
                     </td>
                 </tr>
